@@ -52,7 +52,6 @@ class PasswordController extends AbstractController
         $password->setLogin($data['login']);
         $password->setPassword($data['password']);
 
-        // 💡 Пока без аутентификации — просто берём первого пользователя
         $user = $em->getRepository(User::class)->find(1);
         $password->setUser($user);
 

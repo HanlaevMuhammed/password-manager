@@ -17,7 +17,7 @@ class PasswordController extends AbstractController
         $useNumbers = filter_var($request->query->get('numbers', 'true'), FILTER_VALIDATE_BOOLEAN);
         $useSymbols = filter_var($request->query->get('symbols', 'true'), FILTER_VALIDATE_BOOLEAN);
 
-        // Я ограничил длину чтобы избежать перегрузок
+        // Я решил ограничить длину чтобы избежать перегрузок
         if ($length < 4) {
             $length = 4;
         } elseif ($length > 64) {

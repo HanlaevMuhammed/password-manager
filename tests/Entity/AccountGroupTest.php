@@ -42,18 +42,14 @@ class AccountGroupTest extends TestCase
             ->method('getGroup')
             ->willReturn($group);
 
-        // Добавляем аккаунт
         $group->addAccount($account);
         $this->assertTrue($group->getAccounts()->contains($account));
 
-        // Проверяем, что setGroup был вызван с $group
         $this->assertContains($group, $calls);
 
-        // Удаляем аккаунт
         $group->removeAccount($account);
         $this->assertFalse($group->getAccounts()->contains($account));
 
-        // Проверяем, что setGroup был вызван с null
         $this->assertContains(null, $calls);
     }
 

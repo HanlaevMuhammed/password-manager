@@ -15,6 +15,4 @@ class AccountGroupRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, AccountGroup::class);
     }
-
-    // Здесь можно добавлять свои методы выборки, если нужно
 }
